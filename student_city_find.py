@@ -8,7 +8,7 @@ student3 = {'name': 'Петр', 'cities': ['Пекин', 'Токио']}
 # Помещаем всех студентов в список
 students = [student1, student2, student3]
 
-city = 'Париж'
+city = 'Токио'
 name = ''
 
 for student in students: # Итерируемся по списку студентов. Каждый элемент списка будет словарь
