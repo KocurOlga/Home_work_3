@@ -1,10 +1,20 @@
-def sort_list(my_list, direction): #направление сортировки, если 1, то по возрастанию
-    for i in range(len(my_list)):
-        for j in range(i, len(my_list)):
-            if (direction == 1 and my_list[i] > my_list[j]) or (direction != 1 and my_list[i] < my_list[j]):
-                temp = my_list[i]
-                my_list[i] = my_list[j]
-                my_list[j] = temp
+def sort_list(my_list, direction=None):
+    """Сортировка списка my_list методом пузырька.
+    :param my_list: список значений
+    :param direction: (опциональный) направление сортировки. Возможные значения: 1, -1
+    """
+    if direction:
+    # Сортируем список только если передан параметр direction
+        for i in range(len(my_list)):
+            for j in range(i, len(my_list)):
+                if (direction == -1 and my_list[i] > my_list[j]) or (direction == 1 and my_list[i] < my_list[j]):
+                    # Если direction == -1 и текущий элемент больше следующего
+                    # или direction == 1 и текущий элемент меньше следующего,
+                    # то меняем местами элементы.
+                    temp = my_list[i]
+                    my_list[i] = my_list[j]
+                    my_list[j] = temp
+
     return my_list
 
 
@@ -16,8 +26,8 @@ list5 = [9, 0, 1, 2, 9 , 3, -1, 4, 2]
 
 direct = int(input("Введите направление сортировки (1 - сортировка по возрастанию): "))
 
-print(sort_list(list1, direct))
-print(sort_list(list2, direct))
-print(sort_list(list3, direct))
-print(sort_list(list4, direct))
-print(sort_list(list5, direct))
+print(sort_list(list1))
+print(sort_list(list2))
+print(sort_list(list3))
+print(sort_list(list4))
+print(sort_list(list5))
